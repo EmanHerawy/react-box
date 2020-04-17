@@ -1,41 +1,44 @@
-# React Truffle Box
+# React Truffle Box with truffle-web3-generator 
 
-This box comes with everything you need to start using smart contracts from a react app. This is as barebones as it gets, so nothing stands in your way.
+This box comes with everything you need to start using truffle-web3-generator from a react app. This is as barebones as it gets, so nothing stands in your way.
 
 ## Installation
 
 First ensure you are in a new and empty directory.
 
-1. Run the `unbox` command via `npx` and skip to step 3. This will install all necessary dependencies. A Create-React-App is generated in the `client` directory.
-   ```js
-   npx truffle unbox react
-   ```
-
-2. Alternatively, you can install Truffle globally and run the `unbox` command.
-    ```javascript
-    npm install -g truffle
-    truffle unbox react
+1. Run ganache-cli with seed 
+     ```javascript
+    ganache-cli  -s 0
     ```
 
-3. Run the development console.
-    ```javascript
-    truffle develop
+2. Run 
+   ```javascript
+    npm i
     ```
 
-4. Compile and migrate the smart contracts. Note inside the development console we don't preface commands with `truffle`.
+
+3. Run
+   ```javascript
+    truffle migrate
+    ```
+   
+4. Run
     ```javascript
-    compile
-    migrate
+    truffle run generate
     ```
 
-5. In the `client` directory, we run the React app. Smart contract changes must be manually recompiled and migrated.
+5. Move the service folder inside react src folder or any other folders 
+    
+
+6. In the `client` directory, we run the React app. Smart contract changes must be manually recompiled and migrated.
     ```javascript
     // in another terminal (i.e. not in the truffle develop prompt)
     cd client
+    npm i
     npm run start
     ```
 
-6. Truffle can run tests written in Solidity or JavaScript against your smart contracts. Note the command varies slightly if you're in or outside of the development console.
+7. Truffle can run tests written in Solidity or JavaScript against your smart contracts. Note the command varies slightly if you're in or outside of the development console.
     ```javascript
     // inside the development console.
     test
@@ -44,23 +47,24 @@ First ensure you are in a new and empty directory.
     truffle test
     ```
 
-7. Jest is included for testing React components. Compile your contracts before running Jest, or you may receive some file not found errors.
-    ```javascript
-    // ensure you are inside the client directory when running this
-    npm run test
-    ```
+8. import your service file and call its function .
+   
 
-8. To build the application for production, use the build script. A production build will be in the `client/build` folder.
+9. To build the application for production, use the build script. A production build will be in the `client/build` folder.
     ```javascript
     // ensure you are inside the client directory when running this
     npm run build
     ```
+   ## Notes :
+   1.  please consider adding `data.toNumber()` to any function that return number from blockchain.
+   2.  Events aren't supported yet
+   3.  metamask or any other wallets are not supported yet. 
 
 ## FAQ
 
 * __How do I use this with the Ganache-CLI?__
 
-    It's as easy as modifying the config file! [Check out our documentation on adding network configurations](http://truffleframework.com/docs/advanced/configuration#networks). Depending on the port you're using, you'll also need to update line 29 of `client/src/utils/getWeb3.js`.
+    It's as easy as modifying the config file! [Check out our documentation on adding network configurations](http://truffleframework.com/docs/advanced/configuration#networks).
 
 * __Where is my production build?__
 
