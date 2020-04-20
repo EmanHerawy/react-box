@@ -1,6 +1,6 @@
-# React Truffle Box with truffle-web3-generator 
+# React/angular/wvuejs/webpack Truffle Boxes with truffle-web3-generator 
 
-This box comes with everything you need to start using truffle-web3-generator from a react app. This is as barebones as it gets, so nothing stands in your way.
+This box comes with everything you need to start using truffle-web3-generator from a React/angular/wvuejs/webpack app. This is as barebones as it gets, so nothing stands in your way.
 
 ## Installation
 
@@ -27,10 +27,10 @@ First ensure you are in a new and empty directory.
     truffle run generate
     ```
 
-5. Move the service folder inside react src folder or any other folders 
+5. Move the service & build folders inside React/angular/wvuejs/webpack src folder or any other folders 
     
 
-6. In the `client` directory, we run the React app. Smart contract changes must be manually recompiled and migrated.
+6. In the `client` got to your prefered web framework , we run the React/angular/wvuejs/webpack app. Smart contract changes must be manually recompiled and migrated.
     ```javascript
     // in another terminal (i.e. not in the truffle develop prompt)
     cd client
@@ -56,9 +56,8 @@ First ensure you are in a new and empty directory.
     npm run build
     ```
    ## Notes :
-   1.  please consider adding `data.toNumber()` to any function that return number from blockchain.
-   2.  Events aren't supported yet
-   3.  metamask or any other wallets are not supported yet. 
+   1.  Events aren't supported yet
+   2.  metamask or any other wallets are not supported yet. 
 
 ## FAQ
 
