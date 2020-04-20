@@ -4,7 +4,7 @@ import React, {
 
 import "./App.css";
 // import your service file here 
-import SimpleStorageService from './service/SimpleStorage'
+// import SimpleStorageService from './service/SimpleStorage'
 
 class App extends Component {
   constructor() {
@@ -20,15 +20,15 @@ class App extends Component {
     try {
 
       // Get the contract instance.
-      const service = new SimpleStorageService();
-      // Get the value from the contract to prove it worked.
-      const response = 0//await service.get(); //
+      // const service = new SimpleStorageService();
+      // // Get the value from the contract to prove it worked.
+      // const response = await service.get(); //
 
-      // Update state with the result.
-      this.setState({
-        storageValue: response,
-        connected:true
-      });
+      // // Update state with the result.
+      // this.setState({
+      //   storageValue: response,
+      //   connected:true
+      // });
 
     } catch (error) {
       // Catch any errors for any of the above operations.
@@ -40,16 +40,16 @@ class App extends Component {
   };
   runExample = async () => {
     // Get the contract instance.
-    const service = new SimpleStorageService();
-    // Stores a given value, 5 by default.
-    //await service.set(5, this.state.account, 200000);
-    // Get the value from the contract to prove it worked.
-    const response = 0;//await service.get();
+  //   const service = new SimpleStorageService();
+  //   // Stores a given value, 5 by default.
+  // await service.set(5, this.state.account, 200000);
+  //   // Get the value from the contract to prove it worked.
+  //   const response =await service.get();
 
-    // Update state with the result.
-    this.setState({
-      storageValue: response
-    });
+  //   // Update state with the result.
+  //   this.setState({
+  //     storageValue: response
+  //   });
   };
   render() {
     if (!this.state.connected) {
